@@ -1,3 +1,4 @@
+from keep_alive import keep_alive
 import telebot
 import requests
 import os
@@ -398,4 +399,6 @@ Type: `/info ind Tumhari_UID` (scan UID details nikalne ke liye)
         bot.answer_callback_query(call.id, "❌ Koi error aayi. Ek baar check karo bot group/channels me admin hai ya nahi.", show_alert=True)
 
 print("🔥 ROLEX VIP Superfast Bot is starting on Pella...")
+keep_alive()  # Ye line dummy server chalu karegi
 bot.infinity_polling(allowed_updates=telebot.util.update_types)
+
