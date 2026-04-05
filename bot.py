@@ -523,6 +523,7 @@ Type: `/info ind Tumhari_UID` (scan UID details nikalne ke liye)
         )
 
 
+
 print("🔥 ROLEX VIP Superfast Bot is starting on Pella...")
 bot.infinity_polling(allowed_updates=telebot.util.update_types)
 
