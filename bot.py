@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 # 🔥 BOT TOKEN
-BOT_TOKEN = '8679319585:AAEN_PkS2IB8DvY1a2EM6VCqND2yXlXqSyc'
+BOT_TOKEN = '8679319585:AAG_VYy1kskW0_6YoAVg2WSg2ZoLq-LAWEs'
 bot = telebot.TeleBot(BOT_TOKEN)
 
 API_URL = "https://info-43yp.vercel.app/player-info"
