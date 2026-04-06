@@ -4,6 +4,8 @@ import os
 import json
 import time
 from datetime import datetime
+from flask import Flask
+from threading import Thread
 
 # 🔥 BOT TOKEN
 BOT_TOKEN = '8679319585:AAG_VYy1kskW0_6YoAVg2WSg2ZoLq-LAWEs'
@@ -524,6 +526,27 @@ Type: `/info ind Tumhari_UID` (scan UID details nikalne ke liye)
 
 
 
-print("🔥 ROLEX VIP Superfast Bot is starting on Pella...")
-bot.infinity_polling(allowed_updates=telebot.util.update_types)
+# ==========================================
+# 🌐 FAKE WEB SERVER FOR RENDER
+# ==========================================
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "ROLEX VIP Bot is running successfully on Render!"
+
+def run_server():
+    # Render khud ek port dega jo hum yahan fetch kar rahe hain
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host="0.0.0.0", port=port)
+
+if __name__ == "__main__":
+    print("🔥 ROLEX VIP Superfast Bot is starting on Render...")
+    
+    # Server ko background me start karna
+    server_thread = Thread(target=run_server)
+    server_thread.start()
+    
+    # Apna main bot start karna
+    bot.infinity_polling(allowed_updates=telebot.util.update_types)
 
